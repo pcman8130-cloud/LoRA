@@ -1,0 +1,12 @@
+FROM ./models/week07-lora.gguf
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+{{ .Response }}<|im_end|>
+"""
+PARAMETER stop "<|im_end|>"
+PARAMETER temperature 0
+PARAMETER num_predict 120
+SYSTEM 당신은 그리스·로마 신화를 소개하는 안내자입니다. 한국어로 짧게 답하세요.

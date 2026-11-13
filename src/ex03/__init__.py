@@ -6,7 +6,7 @@ from transformers import DataCollatorForSeq2Seq, Trainer, TrainingArguments, set
 from shared import ADAPTER_DIR, DATA_DIR, DEVICE, load_model
 from shared.training import training_examples
 
-STEPS = 100  # 느린 CPU에서는 3으로 줄여 저장·불러오기부터 확인한다.
+STEPS = 300  # 느린 CPU에서는 3으로 줄여 저장·불러오기부터 확인한다.
 LEARNING_RATE = 5e-4
 RANK = 8
 MAX_LENGTH = 256
